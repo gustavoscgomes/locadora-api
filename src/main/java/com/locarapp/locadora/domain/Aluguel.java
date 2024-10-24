@@ -1,5 +1,6 @@
 package com.locarapp.locadora.domain;
 
+import com.locarapp.locadora.enums.StatusAluguel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,5 +32,7 @@ public class Aluguel {
     private LocalDateTime dataInicio;
     @Column(name = "data_fim", nullable = false)
     private LocalDateTime dataFim;
+    @Enumerated(EnumType.STRING)
+    private StatusAluguel status;
 
 }

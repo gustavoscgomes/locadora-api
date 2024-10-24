@@ -1,30 +1,31 @@
 package com.locarapp.locadora.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Collection;
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "pacotes")
-public class Pacotes {
+@Table(name = "cliente")
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nome", nullable = false)
     private String nome;
-    @Column(name = "preco_por_dia", nullable = false)
-    private Integer precoPorDia;
+    @Column(name = "sobre_nome", nullable = false)
+    private String sobreNome;
+    @Column(name = "telefone", nullable = false)
+    private Integer telefone;
+    @Column(name = "email", nullable = false)
+    private String email;
 //    @JsonIgnore
-//    @OneToMany(mappedBy = "pacotes")
-//    private Collection<Carro> carros;
+//    @OneToOne(mappedBy = "usuario", orphanRemoval = true)
+//    private CartaoDeCredito cartaoDeCredito;
 }

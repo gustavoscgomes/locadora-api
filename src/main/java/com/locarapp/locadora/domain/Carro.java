@@ -17,8 +17,6 @@ public class Carro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "placa", nullable = false)
-    private String placa;
     @Column(name = "modelo", nullable = false)
     private String modelo;
     @Column(name = "marca", nullable = false)
