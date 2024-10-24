@@ -26,6 +26,6 @@ public class Cliente {
     @Column(name = "email", nullable = false)
     private String email;
 //    @JsonIgnore
-//    @OneToOne(mappedBy = "usuario", orphanRemoval = true)
+//    @OneToOne(mappedBy = "cliente", orphanRemoval = true)
 //    private CartaoDeCredito cartaoDeCredito;
 }

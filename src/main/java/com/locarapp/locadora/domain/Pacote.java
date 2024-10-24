@@ -14,8 +14,8 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "pacotes")
-public class Pacotes {
+@Table(name = "pacote")
+public class Pacote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
@@ -24,7 +24,7 @@ public class Pacotes {
     private String nome;
     @Column(name = "preco_por_dia", nullable = false)
     private Integer precoPorDia;
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "pacotes")
-//    private Collection<Carro> carros;
+    @JsonIgnore
+    @OneToMany(mappedBy = "pacote")
+    private Collection<Carro> carros;
 }

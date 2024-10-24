@@ -26,6 +26,6 @@ public class CartaoDeCredito {
     @Column(name = "cvv", nullable = false, length = 3)
     private Integer CVV;
     @OneToOne
-    private Usuario usuario;
+    private Cliente cliente;
 
 }
