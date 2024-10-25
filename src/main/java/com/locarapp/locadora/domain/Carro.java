@@ -25,7 +25,9 @@ public class Carro {
     private Integer ano;
     @Column(name = "renavam", nullable = false)
     private String renavam;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "pacote_id", referencedColumnName = "id")
-    private Pacote pacote;
+    @Column(name = "disponivel", nullable = false)
+    private Boolean disponivel;
+    @ManyToOne
+    @JoinColumn(name = "pacote_de_aluguel_id", referencedColumnName = "id")
+    private PacoteDeAluguel pacoteDeAluguel;
 }

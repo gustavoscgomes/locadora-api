@@ -15,16 +15,20 @@ import java.util.Collection;
 @NoArgsConstructor
 @Builder
 @Table(name = "pacote")
-public class Pacote {
+public class PacoteDeAluguel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
+
     @Column(name = "nome", nullable = false)
     private String nome;
+
     @Column(name = "preco_por_dia", nullable = false)
     private Integer precoPorDia;
+
     @JsonIgnore
-    @OneToMany(mappedBy = "pacote")
+    @OneToMany(mappedBy = "pacoteDeAluguel")
     private Collection<Carro> carros;
 }

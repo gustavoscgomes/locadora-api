@@ -15,24 +15,32 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Table(name = "aluguel")
-public class Aluguel {
+public class ContratoAluguel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "usuario_id", nullable = false)
-    private Long usuarioId;
-    @Column(name = "carro_id", nullable = false)
-    private Long carroId;
-    @Column(name = "marca", nullable = false)
-    private String marca;
-    @Column(name = "modelo", nullable = false)
-    private String modelo;
+
+    @ManyToOne
+    @JoinColumn(name = "carro_id")
+    private Carro carro;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
     @Column(name = "data_inicio", nullable = false)
     private LocalDateTime dataInicio;
+
     @Column(name = "data_fim", nullable = false)
     private LocalDateTime dataFim;
+
     @Enumerated(EnumType.STRING)
     private StatusAluguel status;
+
+    @ManyToOne
+    @JoinColumn(name = "pacote_id")
+    private PacoteDeAluguel pacoteDeAluguel;
 
 }
