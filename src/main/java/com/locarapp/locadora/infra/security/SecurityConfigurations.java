@@ -1,5 +1,6 @@
 package com.locarapp.locadora.infra.security;
 
+import com.locarapp.locadora.infra.security.SecurityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

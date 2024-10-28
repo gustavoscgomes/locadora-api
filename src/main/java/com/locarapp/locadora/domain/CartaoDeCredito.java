@@ -21,11 +21,11 @@ public class CartaoDeCredito {
     private Long numero;
     @Column(name = "mes", nullable = false, length = 2)
     private Integer mes;
-    @Column(name = "ano", nullable = false, length = 4)
+    @Column(name = "ano", nullable = false, length = 2)
     private Integer ano;
     @Column(name = "cvv", nullable = false, length = 3)
-    private Integer CVV;
+    private Integer ccv;
     @OneToOne
-    private Cliente cliente;
+    private Usuario usuario;
 
 }

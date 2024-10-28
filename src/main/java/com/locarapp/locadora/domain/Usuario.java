@@ -30,8 +30,13 @@ public class Usuario implements UserDetails {
     @Column(name = "username", nullable = false)
     private String username;
 
+    @JsonIgnore
     @Column(name = "password", nullable = false)
     private String password;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "usuario", orphanRemoval = true)
+    private CartaoDeCredito cartaoDeCredito;
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -50,23 +55,23 @@ public class Usuario implements UserDetails {
         } else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+//    @Override
+//    public boolean isAccountNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isAccountNonLocked() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isCredentialsNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isEnabled() {
+//        return true;
+//    }
 }

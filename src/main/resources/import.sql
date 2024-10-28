@@ -19,3 +19,5 @@ INSERT INTO carro (id, modelo, marca, ano, renavam, disponivel, pacote_de_alugue
 INSERT INTO carro (id, modelo, marca, ano, renavam, disponivel, pacote_de_aluguel_id) VALUES (12, 'Onix', 'Chevrolet', 2024, '767654321', true, 1);
 INSERT INTO carro (id, modelo, marca, ano, renavam, disponivel, pacote_de_aluguel_id) VALUES (13, 'Hilux', 'Toyta', 2024, '237654321', true, 2);
 INSERT INTO carro (id, modelo, marca, ano, renavam, disponivel, pacote_de_aluguel_id) VALUES (14, '320i', 'Bmw', 2024, '557653896', true, 2);
+
+INSERT INTO contrato_aluguel(id, usuario_id, carro_id) VALUES (1, 1, 1);

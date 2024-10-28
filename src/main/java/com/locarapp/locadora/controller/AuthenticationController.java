@@ -4,6 +4,7 @@ import com.locarapp.locadora.domain.Usuario;
 import com.locarapp.locadora.dto.AuthenticationDTO;
 import com.locarapp.locadora.dto.LoginResponseDTO;
 import com.locarapp.locadora.dto.RegisterDTO;
+import com.locarapp.locadora.enums.Role;
 import com.locarapp.locadora.infra.security.TokenService;
 import com.locarapp.locadora.repository.UsuarioRepository;
 import jakarta.validation.Valid;
@@ -41,7 +42,8 @@ public class AuthenticationController {
         }
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        var newUsuario = new Usuario(data.username(), encryptedPassword, data.role());
+//        var newUsuario = new Usuario(data.username(), encryptedPassword, data.role());
+        var newUsuario = new Usuario(data.username(), encryptedPassword, Role.USER);
 
         usuarioRepository.save(newUsuario);
 

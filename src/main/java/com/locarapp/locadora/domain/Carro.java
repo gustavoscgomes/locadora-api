@@ -21,13 +21,13 @@ public class Carro {
     private String modelo;
     @Column(name = "marca", nullable = false)
     private String marca;
-    @Column(name = "ano", nullable = false, length = 4)
+    @Column(name = "ano", nullable = true)
     private Integer ano;
     @Column(name = "renavam", nullable = false)
     private String renavam;
     @Column(name = "disponivel", nullable = false)
     private Boolean disponivel;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "pacote_de_aluguel_id", referencedColumnName = "id")
     private PacoteDeAluguel pacoteDeAluguel;
 }

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "aluguel")
+@Table(name = "contrato_aluguel")
 public class ContratoAluguel {
 
     @Id
@@ -27,20 +27,31 @@ public class ContratoAluguel {
     private Carro carro;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
-    @Column(name = "data_inicio", nullable = false)
-    private LocalDateTime dataInicio;
+    public ContratoAluguel(Carro carro, Usuario usuario) {
+        this.carro = carro;
+        this.usuario = usuario;
+    }
 
-    @Column(name = "data_fim", nullable = false)
-    private LocalDateTime dataFim;
-
-    @Enumerated(EnumType.STRING)
-    private StatusAluguel status;
-
-    @ManyToOne
-    @JoinColumn(name = "pacote_id")
-    private PacoteDeAluguel pacoteDeAluguel;
+    //    @Column(name = "nome", nullable = false)
+//    private String nome;
+//
+//    @Column(name = "sobrenome", nullable = false)
+//    private String sobreNome;
+//
+//    @Column(name = "data_inicio", nullable = false)
+//    private LocalDateTime dataInicio;
+//
+//    @Column(name = "data_fim", nullable = false)
+//    private LocalDateTime dataFim;
+//
+//    @Enumerated(EnumType.STRING)
+//    private StatusAluguel status;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "pacote_id")
+//    private PacoteDeAluguel pacoteDeAluguel;
 
 }
