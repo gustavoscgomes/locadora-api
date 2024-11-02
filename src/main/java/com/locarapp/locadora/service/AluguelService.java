@@ -1,11 +1,11 @@
 package com.locarapp.locadora.service;
 
-import com.locarapp.locadora.domain.Carro;
-import com.locarapp.locadora.domain.ContratoAluguel;
-import com.locarapp.locadora.domain.Usuario;
+import com.locarapp.locadora.entity.Carro;
+import com.locarapp.locadora.entity.Aluguel;
+import com.locarapp.locadora.entity.Usuario;
 import com.locarapp.locadora.exception.UnavailableCarException;
 import com.locarapp.locadora.repository.CarroRepository;
-import com.locarapp.locadora.repository.ContratoAluguelRepository;
+import com.locarapp.locadora.repository.AluguelRepository;
 import com.locarapp.locadora.repository.UsuarioRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ContratoDeAluguelService {
+public class AluguelService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -26,13 +26,13 @@ public class ContratoDeAluguelService {
     private CarroRepository carroRepository;
 
     @Autowired
-    private ContratoAluguelRepository contratoAluguelRepository;
+    private AluguelRepository aluguelRepository;
 
-    public List<ContratoAluguel> listar() {
-        return contratoAluguelRepository.findAll();
+    public List<Aluguel> listar() {
+        return aluguelRepository.findAll();
     }
 
-    public ContratoAluguel salvar(String modelo) {
+    public Aluguel salvar(String modelo) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
 
@@ -48,9 +48,9 @@ public class ContratoDeAluguelService {
             throw new UnavailableCarException("O carro " + modelo + " não está disponível para aluguel");
         }
 
-        var contrato = new ContratoAluguel(carro, usuario);
+        var contrato = new Aluguel(carro, usuario);
 
-        return contratoAluguelRepository.save(contrato);
+        return aluguelRepository.save(contrato);
     }
 
 }

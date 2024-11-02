@@ -1,7 +1,7 @@
 package com.locarapp.locadora.service;
 
-import com.locarapp.locadora.domain.CartaoDeCredito;
-import com.locarapp.locadora.domain.Usuario;
+import com.locarapp.locadora.entity.CartaoDeCredito;
+import com.locarapp.locadora.entity.Usuario;
 import com.locarapp.locadora.repository.CartaoDeCreditoRepository;
 import com.locarapp.locadora.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;

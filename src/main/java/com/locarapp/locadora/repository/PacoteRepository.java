@@ -1,6 +1,6 @@
 package com.locarapp.locadora.repository;
 
-import com.locarapp.locadora.domain.PacoteDeAluguel;
+import com.locarapp.locadora.entity.PacoteDeAluguel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,6 +1,6 @@
 package com.locarapp.locadora.controller;
 
-import com.locarapp.locadora.domain.Usuario;
+import com.locarapp.locadora.entity.Usuario;
 import com.locarapp.locadora.dto.AuthenticationDTO;
 import com.locarapp.locadora.dto.LoginResponseDTO;
 import com.locarapp.locadora.dto.RegisterDTO;

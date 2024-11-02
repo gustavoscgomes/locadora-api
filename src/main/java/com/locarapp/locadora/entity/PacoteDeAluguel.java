@@ -1,4 +1,4 @@
-package com.locarapp.locadora.domain;
+package com.locarapp.locadora.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

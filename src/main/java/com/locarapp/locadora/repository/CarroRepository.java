@@ -1,8 +1,7 @@
 package com.locarapp.locadora.repository;
 
-import com.locarapp.locadora.domain.Carro;
+import com.locarapp.locadora.entity.Carro;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;

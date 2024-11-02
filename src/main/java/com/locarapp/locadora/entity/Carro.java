@@ -1,4 +1,4 @@
-package com.locarapp.locadora.domain;
+package com.locarapp.locadora.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,7 +21,7 @@ public class Carro {
     private String modelo;
     @Column(name = "marca", nullable = false)
     private String marca;
-    @Column(name = "ano", nullable = true)
+    @Column(name = "ano", nullable = false)
     private Integer ano;
     @Column(name = "renavam", nullable = false)
     private String renavam;
