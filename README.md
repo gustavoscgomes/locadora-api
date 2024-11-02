@@ -12,7 +12,6 @@ A API de Locadora permite a gestão de uma plataforma de aluguel de carros com a
 - [Endpoints](#endpoints)
 - [Exemplos de Uso](#exemplos-de-uso)
 - [Documentação OpenAPI](#documentação-openapi)
-- [Possíveis Melhorias](#possíveis-melhorias)
 
 ## Propósito
 A API permite a criação de novos usuários com role USER, onde esses usuários podem realizar operações de criação, edição e exclusão de contratos de aluguel. Usuários com a role ADMIN possuem permissões para realizar qualquer operação (CRUD) nos recursos de carro, pacote de aluguel, usuário e contrato de aluguel.
@@ -124,3 +123,7 @@ Copiar código
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 ```
+
+## Documentação OpenAPI
+A documentação OpenAPI é gerada automaticamente e pode ser acessada no Swagger para explorar e testar os endpoints da API de maneira interativa.
+URL: http://localhost:8080/swagger-ui/index.html
